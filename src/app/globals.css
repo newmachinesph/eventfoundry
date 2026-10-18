@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --near-black: #1a1a1a;
+  --coral-500: #ff6b35;
+  --warm-50: #faf6f2;
+  --warm-100: #f0e8e0;
+  --warm-200: #e0d5cd;
+  --warm-400: #9b8a8a;
+  --warm-500: #7a6b6b;
+}
+
+@theme inline {
+  --color-near-black: var(--near-black);
+  --color-coral-500: var(--coral-500);
+  --color-warm-400: var(--warm-400);
+  --font-sans: var(--font-dm-sans);
+}
+
+body {
+  color: var(--near-black);
+}
+
+/* Section label */
+.forge-section-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral-500);
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Cards */
+.forge-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #e8e2d9;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.forge-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: rgba(255, 107, 53, 0.25);
+}
+
+/* Buttons */
+.forge-btn-primary {
+  background: var(--coral-500);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.forge-btn-primary:hover {
+  background: #e85a27;
+}
+
+.forge-btn-ghost {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.forge-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary {
+  background: var(--coral-500);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #e85a27;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-float {
+  animation: float-y 3s ease-in-out infinite;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Filter chips */
+.forge-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  border: 1.5px solid #e5e7eb;
+  background: white;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: "DM Sans", sans-serif;
+}
+
+.forge-chip:hover {
+  border-color: var(--coral-500);
+  color: var(--coral-500);
+}
+
+.forge-chip.active {
+  background: var(--coral-500);
+  border-color: var(--coral-500);
+  color: white;
+}
+
+/* Wizard option buttons */
+.wizard-option {
+  padding: 1rem 1.25rem;
+  border-radius: 0.875rem;
+  border: 1.5px solid #e5e7eb;
+  background: white;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.wizard-option:hover {
+  border-color: var(--coral-500);
+  background: rgba(255, 107, 53, 0.03);
+}
+
+.wizard-option.selected {
+  border-color: var(--coral-500);
+  background: rgba(255, 107, 53, 0.06);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.12);
+}
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
